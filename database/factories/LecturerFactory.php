@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\lecturer;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,12 @@ class LecturerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "user_id" => User::factory(),
+            "employee_number" => fake()->randomElement("1")->random()->id,
+            "department" => fake()->randomElement(['IT', 'Accounting', 'HR']),
+            "office_room" => fake()->randomElement("1")->random()->id,
+            "photo" => fake()->image(),
+            "IsActivated" => fake()->randomElement([true, false]),
         ];
     }
 }
