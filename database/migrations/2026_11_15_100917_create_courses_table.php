@@ -13,10 +13,10 @@ return new class extends Migration {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('lecturer_id')->constrained('lecturers')->onDelete('cascade');
-            $table->string('course_code');
+            $table->string('course_code')->unique();
             $table->string('title');
             $table->integer('credit_hours');
-            $table->enum('semester',['summer','First semester','Second semester']);
+            $table->enum('semester', ['summer', 'First', 'Second']);
             $table->timestamps();
         });
     }

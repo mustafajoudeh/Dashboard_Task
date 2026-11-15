@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\course;
+use App\Models\lecturer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,11 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'lecturer_id' => lecturer::factory(),
+            'course_code' => "",
+            'title' => "",
+            "credit_hours" => fake()->randomElement([1, 2, 3]),
+            "semester" => fake()->randomElement(['summer', 'First', 'Second']),
         ];
     }
 }
