@@ -12,6 +12,16 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+
+    public function lecturers()
+    {
+        return $this->belongsTo(lecturer::class);
+    }
+
+    public function course_user()
+    {
+        return $this->belongsTo(course_user::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
