@@ -15,5 +15,12 @@ class lecturer extends Model
         return $this->hasOne(User::class);
     }
 
-    
+    protected $fillable = [
+        'user_id',
+        'employee_number',
+        'department',
+        'office_room',
+        'photo',
+        'IsActivated',
+    ];
 }

@@ -19,4 +19,12 @@ class course extends Model
     {
         return $this->belongsTo(course_user::class);
     }
+
+    protected $fillable = [
+        'lecturer_id',
+        'course_code',
+        'title',
+        'credit_hours',
+        'semester',
+    ];
 }

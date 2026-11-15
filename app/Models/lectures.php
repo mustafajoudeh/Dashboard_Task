@@ -14,4 +14,12 @@ class lectures extends Model
     {
         return $this->hasMany(course::class);
     }
+
+    protected $fillable = [
+        'course_id',
+        'title',
+        'topic_summary',
+        'hall_name',
+        'scheduled_at',
+    ];
 }

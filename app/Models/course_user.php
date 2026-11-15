@@ -19,4 +19,11 @@ class course_user extends Model
     {
         return $this->hasMany(course::class);
     }
+
+    protected $fillable = [
+        'user_id',
+        'course_id',
+        'enrollment_date',
+        'grade'
+    ];
 }
